@@ -1,0 +1,1 @@
+FROM plsssolucoes/ansible-redis:31
