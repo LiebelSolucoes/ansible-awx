@@ -1,4 +1,4 @@
-FROM ansible/awx:15.0.1
+FROM ansible/awx:${ANSIBLE_VERSION}
 USER root
 COPY settings.py /etc/tower/settings.py
 RUN mkdir -p /etc/tower/conf.d

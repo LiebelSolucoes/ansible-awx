@@ -15,7 +15,7 @@ pipeline {
               env.PATH = "${DOCKER_HOME}/bin:${env.PATH}"
               println env.PATH
               sh '''
-                 docker build -t kmmeng/ansible-task:${BUILD_NUMBER} task/
+                 docker build -t kmmeng/ansible-task:${BUILD_NUMBER} --build-arg ANSIBLE_VERSION=${ANSIBLE_VERSION} task/
                  docker login -u daniloliebel -pV1129power!
                  docker push kmmeng/ansible-task:${BUILD_NUMBER}
                  docker rmi -f kmmeng/ansible-task:${BUILD_NUMBER}
@@ -45,7 +45,7 @@ pipeline {
               env.PATH = "${DOCKER_HOME}/bin:${env.PATH}"
               println env.PATH
               sh '''
-                 docker build -t kmmeng/ansible-awx:${BUILD_NUMBER} web/
+                 docker build -t kmmeng/ansible-awx:${BUILD_NUMBER} --build-arg ANSIBLE_VERSION=${ANSIBLE_VERSION} web/
                  docker login -u daniloliebel -pV1129power!
                  docker push kmmeng/ansible-awx:${BUILD_NUMBER}
                  docker rmi -f kmmeng/ansible-awx:${BUILD_NUMBER}
