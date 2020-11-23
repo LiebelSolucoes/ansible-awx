@@ -1,4 +1,5 @@
 FROM ansible/awx:${ANSIBLE_VERSION}
+LABEL maintainer="danilo.liebel@kmm.com.br"
 USER root
 COPY settings.py /etc/tower/settings.py
 RUN mkdir -p /etc/tower/conf.d

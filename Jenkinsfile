@@ -51,9 +51,9 @@ pipeline {
                  docker rmi -f kmmeng/ansible-awx:${BUILD_NUMBER}
                  '''
             }
- 	        }
  	      }
  	    }
+ 	  }
     }
   }
 }
