@@ -1,6 +1,7 @@
 FROM ansible/awx:15.0.1
 LABEL maintainer="danilo.liebel@kmm.com.br"
 USER root
+COPY logo-header.svg /var/lib/awx/public/static/assets/logo-header.svg
 COPY settings.py /etc/tower/settings.py
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN mkdir -p /etc/tower/conf.d
