@@ -4,5 +4,5 @@ USER root
 COPY settings.py /etc/tower/settings.py
 RUN mkdir -p /etc/tower/conf.d
 RUN touch /etc/tower/conf.d/environment.sh
-RUN echo "command_warnings=False" >> /etc/ansible/ansible.cfg
+RUN sed -i '/^#.* command_warnings /s/^#//' /etc/ansible/ansible.cfg
 ENTRYPOINT /usr/bin/launch_awx_task.sh
