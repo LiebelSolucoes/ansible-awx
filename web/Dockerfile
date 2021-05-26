@@ -1,4 +1,4 @@
-FROM ansible/awx:15.0.1
+FROM ansible/awx:17.1.0
 LABEL maintainer="danilo.liebel@kmm.com.br"
 USER root
 COPY logo-header.svg /var/lib/awx/public/static/assets/logo-header.svg
