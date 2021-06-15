@@ -6,5 +6,6 @@ COPY settings.py /etc/tower/settings.py
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN mkdir -p /etc/tower/conf.d
 RUN touch /etc/tower/conf.d/environment.sh
+RUN ansible-galaxy collection install community.windows
 RUN sed -i '/^#.* command_warnings /s/^#//' /etc/ansible/ansible.cfg
 ENTRYPOINT /usr/bin/launch_awx.sh
